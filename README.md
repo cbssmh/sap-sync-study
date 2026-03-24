@@ -1,115 +1,71 @@
-# SAP MM & ABAP 학습 포트폴리오
+# SAP MM Process Design Portfolio
 
-## 📌 소개
+## 📌 Overview
 
-SAP MM 기반 프로젝트 수행을 목표로  
-프로세스 중심으로 정리한 포트폴리오입니다.
-
-단순 기능 요약이 아니라,
-
-- 업무 프로세스 흐름 이해  
-- 모듈 간 연계 구조 분석  
-- 회계(FI)와의 통합 로직 파악  
-- S/4HANA 전환 시 영향 분석  
-- 기술 관점에서의 시스템 동작 이해  
-
-를 중심으로 정리하고 있습니다.
-
-구매 리드타임 단축, 승인 통제 강화,  
-재고 정확도 향상 등  
-비즈니스 관점에서의 영향까지 함께 분석합니다.
+본 프로젝트는 단순 SAP 개념 학습이 아닌,
+**구매 프로세스(PR → PO → GR → IR)를 실제 기업 상황 기반으로 재설계하고,
+MM–FI 통합까지 고려한 프로세스 설계 능력을 검증하기 위한 포트폴리오**입니다.
 
 ---
 
-## 🧩 핵심 학습 범위
+## 🎯 Problem Statement
 
-### 🔹 MM 기능 관점
+기존 구매 프로세스의 주요 문제:
 
-- P2P End-to-End 프로세스 (PR → PO → GR → IR → 회계전표)
-- MRP 및 재고 관리 로직
-- 가격결정 구조 (Condition Technique)
-- 계정결정(OBYC) 흐름
-- 승인 전략 설계 구조 (Classic / Flexible Workflow)
-- 재고–FI 연계 구조
-- S/4HANA Simplification 및 전환 영향
+* 승인 지연으로 인한 구매 리드타임 증가
+* 가격 통제 부재
+* GR/IR 불일치로 인한 회계 정합성 문제
 
 ---
 
-### 🔹 ABAP 이해 기반
+## 🛠 Solution
 
-MM 컨설턴트로서 개발자와 협업하기 위한 기술 이해 목적
+다음과 같은 방식으로 프로세스를 재설계:
 
-- Report Program 구조
-- ALV 구현 구조
-- SELECT 성능 기본
-- RFC / IDoc 인터페이스 개념
-- Batch Job 동작 흐름
-- Error Handling 패턴
-- MM–FI 분개 흐름 이해
+* Flexible Workflow 기반 자동 승인
+* Price Control 전략 적용
+* MM–FI 통합 기반 자동 전표 처리
 
 ---
 
-## 📂 Repository 구조
+## 🔄 End-to-End Flow
 
-### `/sap-concepts`
-MM 프로세스 및 설정 로직 중심 정리
+PR → PO → GR → IR → FI Posting
 
-- MM 프로세스 분석
-- 가격결정 및 계정결정
-- 승인 전략 로직
-- 재고 및 회계 연계
-- S/4HANA 전환 체크포인트
-- 트러블슈팅 시나리오
+* 구매 요청 생성
+* 승인 자동화
+* 입고 처리
+* 송장 검증
+* 회계 전표 자동 생성
 
 ---
 
-### `/abap-study`
-기술 이해를 위한 구조 정리
+## 💡 Key Design Decisions
 
-- Report 예제
-- ALV 구조
-- 성능 고려 사항
-- 인터페이스 개념
-- 배치 및 오류 처리
+* Flexible Workflow 선택 (기존 Release Strategy 대체)
+* Price Control S 사용
+* OBYC 기반 자동 계정 결정 설계
 
 ---
 
-### `/project-simulation`
-실전 프로젝트 가정 문서
+## 📊 Outcome
 
-- 요구사항 정의서
-- To-Be 프로세스 설계
-- Customizing 설계 문서
-- 테스트 시나리오
+* 승인 시간 단축
+* 회계 오류 감소
+* 프로세스 자동화율 증가
 
 ---
 
-## 🔍 정리 방식
+## 📁 Key Documents
 
-각 주제는 다음 구조로 정리합니다:
-
-1. 업무 시나리오  
-2. 시스템 동작 흐름  
-3. 설정 / 기술 로직  
-4. 발생 가능한 오류 사례  
-5. 개선 또는 설계 관점 확장  
-
-이론 나열이 아닌,  
-**“왜 시스템이 그렇게 동작하는가”**를 이해하는 데 초점을 둡니다.
+* [To-Be Process](./03_to_be_design/to_be_process.md)
+* [MM-FI Integration](./04_mm_fi_integration/end_to_end_flow.md)
+* [Design Decisions](./03_to_be_design/design_decisions.md)
 
 ---
 
-## 🔄 업데이트 원칙
+## 🚀 What I Learned
 
-- 1일 1커밋 유지  
-- 실무 관점 중심 확장  
-- 단순 정리 → 오류 분석 → 설계 관점 사고로 발전  
-
----
-
-## 🎯 방향성
-
-- 프로세스 중심 SAP MM 컨설턴트 성장  
-- 모듈 간 통합 이해 강화  
-- 기능 + 기술을 연결할 수 있는 사고력 구축  
-- S/4HANA 전환 프로젝트 대응 역량 확보
+* SAP MM 프로세스의 End-to-End 흐름 이해
+* MM–FI 통합 구조 설계 경험
+* 비즈니스 요구사항을 시스템으로 변환하는 능력 강화
